@@ -1,5 +1,5 @@
 class Solution {
-    public void findDifference(int[] nums1, int[] nums2) {
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
         Set <Integer> s1 = new HashSet<>();
         for(int i=0;i<nums1.length;i++){
             s1.add(nums1[i]);
@@ -12,7 +12,11 @@ class Solution {
         d1.removeAll(s2);
         Set<Integer> d2 = new HashSet<>(s2);
         d2.removeAll(s1);
-        System.out.println(d1+","+d2);
+        List<List<Integer>> l1= new ArrayList<>();
+        l1.add(new ArrayList<>(d1));
+        l1.add(new ArrayList<>(d2));
+        return l1;
+        
 
 
     }
