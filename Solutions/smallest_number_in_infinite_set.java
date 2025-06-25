@@ -21,4 +21,3 @@ class SmallestInfiniteSet {
         p.add(num);
     }
 }
-
