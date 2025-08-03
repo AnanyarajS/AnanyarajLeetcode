@@ -2,7 +2,6 @@ class Solution {
     public boolean backspaceCompare(String s, String t) {
         Stack<Character> ss = new Stack<>();
         Stack<Character> ts = new Stack<>();
-        boolean flag = true;
         for(char c: s.toCharArray()){
             if(c=='#'){
                 if(ss.isEmpty())
