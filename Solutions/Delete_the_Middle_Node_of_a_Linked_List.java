@@ -9,24 +9,18 @@
  * }
  */
 class Solution {
-    static int lengthofList(ListNode head){
-        ListNode curr = head;
-        int count=0;
-        while(curr!=null){
-            count++;
-            curr=curr.next;
-        }
-        return count;
-    }
     public ListNode deleteMiddle(ListNode head) {
-        int n = lengthofList(head);
-        if(n==1)
-        return null;
-        ListNode curr = head;
-        for(int i=1;curr!=null && i<n/2;i++){
-            curr = curr.next;
+        if(head==null || head.next==null){
+            return null;
         }
-        curr.next=curr.next.next;
-        return head;        
+       ListNode fast = head.next;
+       ListNode slow = head;
+       while(fast.next!=null && fast.next.next!=null){
+        fast = fast.next.next;
+        slow = slow.next;
+       }
+       slow.next = slow.next.next;
+       return head;
+        
     }
 }
